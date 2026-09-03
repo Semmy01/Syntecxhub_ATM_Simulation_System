@@ -40,4 +40,9 @@ public class Utility {
             }
         }while(userInput != 5);
     }
+
+    public static void greetings(User user){
+        System.out.println("Welcome " + user.getUserName() + " !");
+        System.out.println("-".repeat(30));
+    }
 }

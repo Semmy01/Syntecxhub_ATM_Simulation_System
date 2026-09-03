@@ -2,11 +2,11 @@ package dev.ATM;
 
 public class User {
 
-    private String name;
+    private String userName;
     private Account account ;
 
-    public User(String name){
-        this.name = name;
+    public User(String userName){
+        this.userName = userName;
         account = new Account("");
     }
 
@@ -26,11 +26,28 @@ public class User {
         this.account.setPin(newPin);
     }
 
+    public String getUserName(){
+        return userName;
+    }
+
     @Override
     public String toString() {
         return "User{"+
-                "name='" + name + '\'' +
+                "userName='" + userName + '\'' +
                 ", account=" + account +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+
+        if(!(obj instanceof User)) return false;
+
+        User user = (User) obj;
+
+        return user.userName.equals(this.userName) ;
+    }
+
+
 }
